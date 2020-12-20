@@ -1,7 +1,8 @@
-dbconfig.php
 *.debug
-
 *.release
-
+*.Debug
+*.Release
+*Makefile*
 /debug
 /release
+*qmake*
