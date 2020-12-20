@@ -1,0 +1,14 @@
+debug/AVLTree.o
+debug/BTree.o
+debug/CurevoTree.o
+debug/CustomQGraphicsScene.o
+debug/MyGraphicsView.o
+debug/RBTree.o
+debug/Tree.o
+debug/main.o
+debug/univertex.o
+debug/widget.o
+debug/moc_CustomQGraphicsScene.o
+debug/moc_MyGraphicsView.o
+debug/moc_univertex.o
+debug/moc_widget.o
