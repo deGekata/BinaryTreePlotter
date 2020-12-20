@@ -1,0 +1,7 @@
+dbconfig.php
+*.debug
+
+*.release
+
+/debug
+/release
