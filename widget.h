@@ -22,7 +22,7 @@ class Widget : public QWidget
 public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
-
+    qreal x = 20, y = 20;
 
     void drawTree(UnitedVertexForm* vertex, QPointF pos, bool L, bool rt = false);
 

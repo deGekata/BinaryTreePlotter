@@ -4,6 +4,7 @@
 
 void CustomQGraphicsScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
+
     //qDebug() << "in";
     if (mouseEvent->button() == Qt::LeftButton)
     {
@@ -26,7 +27,8 @@ void CustomQGraphicsScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 }
 
 void CustomQGraphicsScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
-    if(true){
+    if(false){
+
         qreal dx, dy;
         dx = event->pos().rx() - prev.rx();
         dy = event->pos().ry() - prev.ry();
@@ -36,7 +38,7 @@ void CustomQGraphicsScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
         qDebug() << rct;
 //        this->setSceneRect()
         this->setSceneRect(-180, -90, 360, 180);
-        this->setSceneRect(0.0, 0.0, 500.0, 500.0);
+        this->setSceneRect(0.0, 0.0, 600.0, 600.0);
 //        this->sceneRect().setX(this->sceneRect().x() + dx);
 //        this->sceneRect().setY(this->sceneRect().y() + dy);
     }

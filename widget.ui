@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>909</width>
-    <height>610</height>
+    <width>1335</width>
+    <height>981</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,12 +21,15 @@
     <rect>
      <x>9</x>
      <y>9</y>
-     <width>711</width>
-     <height>601</height>
+     <width>1131</width>
+     <height>891</height>
     </rect>
    </property>
    <property name="mouseTracking">
     <bool>true</bool>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="midLineWidth">
     <number>0</number>
@@ -47,8 +50,8 @@
     <rectf>
      <x>0.000000000000000</x>
      <y>0.000000000000000</y>
-     <width>300.000000000000000</width>
-     <height>303.000000000000000</height>
+     <width>20000.000000000000000</width>
+     <height>10000.000000000000000</height>
     </rectf>
    </property>
    <property name="alignment">
@@ -66,6 +69,9 @@
    <property name="resizeAnchor">
     <enum>QGraphicsView::AnchorUnderMouse</enum>
    </property>
+   <property name="viewportUpdateMode">
+    <enum>QGraphicsView::FullViewportUpdate</enum>
+   </property>
    <property name="rubberBandSelectionMode">
     <enum>Qt::IntersectsItemShape</enum>
    </property>
@@ -73,7 +79,7 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>1150</x>
      <y>10</y>
      <width>171</width>
      <height>331</height>

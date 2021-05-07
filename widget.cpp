@@ -4,6 +4,7 @@
 #include <CustomQGraphicsScene.h>
 /* Function to get a random number in the range from minimum to maximum
  * */
+
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
@@ -11,8 +12,9 @@ Widget::Widget(QWidget *parent) :
     ui->setupUi(this);
     scene = new CustomQGraphicsScene();
     //    scene->widj = this;
-    //    scene->setSceneRect(-200, -200, 400, 400);
+        scene->setSceneRect(5000, -5000, 10000, 10000);
     ui->graphicsView->setScene(scene);
+    ui->graphicsView->setTransformationAnchor(QGraphicsView::NoAnchor);
     UnitedVertexForm* vert;
     if(tree_ind == 0){
         vert = avl.get_unitedTree();
@@ -24,10 +26,10 @@ Widget::Widget(QWidget *parent) :
 
     qDebug() << vert;
     UnitedVertexForm::calc_size(vert);
-    UnitedVertexForm::prUniTree(vert);
-    drawTree(vert, QPointF(2000, 0), 1, true);
-    ui->graphicsView->resetTransform();
-    ui->graphicsView->scale(scale, scale);
+//    UnitedVertexForm::prUniTree(vert);
+    drawTree(vert, QPointF(20000, 0), 1, true);
+//    ui->graphicsView->resetTransform();
+//    ui->graphicsView->scale(scale, scale);
 
     //    scene->itemAt(
     //    this->resize(640,640);
@@ -52,15 +54,15 @@ Widget::~Widget()
 
 void Widget::keyReleaseEvent(QKeyEvent *event) {
     if(event->key() == Qt::Key_Equal){
-        if(scale < qreal(3)){
+        if(scale < qreal(100)){
             ui->graphicsView->resetTransform();
-            scale+=0.1;
+            scale+=1;
             ui->graphicsView->scale(scale, scale);
             return;
         }
     } else if (event->key() == Qt::Key_Minus){
-        if(scale > qreal(0.4)){
-            scale-=0.1;
+        if(scale > qreal(0.1)){
+            scale-=0.01;
             ui->graphicsView->resetTransform();
             ui->graphicsView->scale(scale, scale);
             update();
@@ -100,7 +102,7 @@ void Widget::drawTree(UnitedVertexForm* vertex, QPointF pos, bool L, bool rt){
 void Widget::on_add_range_released(){
     bool ok;
     int i = QInputDialog::getInt(this, QString::fromUtf8("Enter range"),
-                                 QString::fromUtf8("Max num:"), 25, 1, 1000, 1, &ok);
+                                 QString::fromUtf8("Max num:"), 25, 1, 1000000, 1, &ok);
     if (ok){
         std::random_device rd{};
         std::mt19937 engine{rd()};
@@ -121,17 +123,22 @@ void Widget::on_add_range_released(){
 
         qDebug() << vert;
         UnitedVertexForm::calc_size(vert);
-        UnitedVertexForm::prUniTree(vert);
+//        UnitedVertexForm::prUniTree(vert);
         ui->graphicsView->scene()->clear();
-        drawTree(vert, QPointF(2000, 0), 1, true);
-        ui->graphicsView->resetTransform();
-        ui->graphicsView->scale(scale, scale);
+        drawTree(vert, QPointF(ui->graphicsView->scene()->width() / 2 + 2000 , ui->graphicsView->scene()->width() / 2), 1, true);
+//        ui->graphicsView->resetTransform();
+//        ui->graphicsView->scale(scale, scale);
+
     }
 
 };
 
 void Widget::on_add_element_released(){
     bool ok;
+    ui->graphicsView->translate(100, 0);
+    x+=100;
+//    y+=100;
+    /*
     int i = QInputDialog::getInt(this, QString::fromUtf8("Enter num"),
                                  QString::fromUtf8("Your num:"), 0, -2000000, 2000000, 1, &ok);
     if (ok){
@@ -156,6 +163,7 @@ void Widget::on_add_element_released(){
         ui->graphicsView->resetTransform();
         ui->graphicsView->scale(scale, scale);
     }
+    */
 
 };
 
@@ -172,11 +180,12 @@ void Widget::on_next_tree_released(){
     }
     qDebug() << vert;
     UnitedVertexForm::calc_size(vert);
-    UnitedVertexForm::prUniTree(vert);
+//    UnitedVertexForm::prUniTree(vert);
     ui->graphicsView->scene()->clear();
-    drawTree(vert, QPointF(2000, 0), 1, true);
-    ui->graphicsView->resetTransform();
-    ui->graphicsView->scale(scale, scale);
+
+    drawTree(vert, QPointF(15000, 0), 1, true);
+//    ui->graphicsView->resetTransform();
+    ui->graphicsView->scale(100, 100);
 };
 
 
@@ -196,7 +205,7 @@ void Widget::delete_vertex(int elem){
 
     qDebug() << vert;
     UnitedVertexForm::calc_size(vert);
-    UnitedVertexForm::prUniTree(vert);
+//    UnitedVertexForm::prUniTree(vert);
     ui->graphicsView->scene()->clear();
     drawTree(vert, QPointF(2000, 0), 1, true);
     ui->graphicsView->resetTransform();

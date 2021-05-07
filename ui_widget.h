@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'widget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.5
+** Created by: Qt User Interface Compiler version 5.13.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -33,26 +33,28 @@ public:
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->setEnabled(true);
-        Widget->resize(909, 610);
+        Widget->resize(1335, 981);
         graphicsView = new QGraphicsView(Widget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(9, 9, 711, 601));
+        graphicsView->setGeometry(QRect(9, 9, 1131, 891));
         graphicsView->setMouseTracking(true);
+        graphicsView->setFocusPolicy(Qt::NoFocus);
         graphicsView->setMidLineWidth(0);
         graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         graphicsView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         graphicsView->setInteractive(true);
-        graphicsView->setSceneRect(QRectF(0, 0, 300, 303));
+        graphicsView->setSceneRect(QRectF(0, 0, 20000, 10000));
         graphicsView->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         graphicsView->setRenderHints(QPainter::Antialiasing|QPainter::HighQualityAntialiasing|QPainter::TextAntialiasing);
         graphicsView->setDragMode(QGraphicsView::NoDrag);
         graphicsView->setTransformationAnchor(QGraphicsView::NoAnchor);
         graphicsView->setResizeAnchor(QGraphicsView::AnchorUnderMouse);
+        graphicsView->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
         graphicsView->setRubberBandSelectionMode(Qt::IntersectsItemShape);
         horizontalLayoutWidget = new QWidget(Widget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(730, 10, 171, 331));
+        horizontalLayoutWidget->setGeometry(QRect(1150, 10, 171, 331));
         verticalLayout = new QVBoxLayout(horizontalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setSizeConstraint(QLayout::SetNoConstraint);
@@ -155,10 +157,10 @@ public:
 
     void retranslateUi(QWidget *Widget)
     {
-        Widget->setWindowTitle(QApplication::translate("Widget", "Widget", nullptr));
-        next_tree->setText(QApplication::translate("Widget", "Next tree", nullptr));
-        add_element->setText(QApplication::translate("Widget", "Add element", nullptr));
-        add_range->setText(QApplication::translate("Widget", "Add random range", nullptr));
+        Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
+        next_tree->setText(QCoreApplication::translate("Widget", "Next tree", nullptr));
+        add_element->setText(QCoreApplication::translate("Widget", "Add element", nullptr));
+        add_range->setText(QCoreApplication::translate("Widget", "Add random range", nullptr));
     } // retranslateUi
 
 };
